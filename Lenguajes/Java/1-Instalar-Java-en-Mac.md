@@ -17,7 +17,7 @@ Este documento describe las opciones para instalar Java en un Mac. Se cubren tre
 
 2. En la sección _"Java Downloads"_, selecciona la versión que necesites (por ejemplo, JDK 24) para macOS.
 
-   <img src="./img/Java-Downloads-Oracle.png" style="margin: 24px auto;" width="600">
+   <img src="./img/Java-Downloads-Oracle.png" style="margin: 24px 0;" width="600">
 
 3. En la lista de instaladores, elige el paquete para **macOS aarch64** o **macOS x64** (según CPU: Apple Silicon o Intel).
 
@@ -33,7 +33,7 @@ Este documento describe las opciones para instalar Java en un Mac. Se cubren tre
 
    Deberías ver algo similar a:
 
-   <img src="./img/Java-version.png" style="margin: 24px auto;" width="600">
+   <img src="./img/Java-version.png" style="margin-bottom: 16px;" width="600">
 
 7. Si necesitas configurar la variable `JAVA_HOME`, añade al final de tu perfil de shell (`~/.zshrc` o `~/.bash_profile`) la línea:
 
@@ -49,7 +49,7 @@ Este documento describe las opciones para instalar Java en un Mac. Se cubren tre
 
 ## Opción 2: Instalación mediante Homebrew
 
-[Homebrew](https://brew.sh) es el gestor de paquetes más usado en macOS. Permite instalar OpenJDK sin necesidad de descargar manualmente archivos .dmg.
+[Homebrew](https://brew.sh) (gestor de paquetes más usado en macOS), permite instalar OpenJDK sin necesidad de descargar manualmente archivos `.dmg`.
 
 1. Abre la terminal.
 
@@ -153,3 +153,48 @@ Este documento describe las opciones para instalar Java en un Mac. Se cubren tre
    ```sh
    export JAVA_HOME=$(/usr/libexec/java_home -v 17)
    ```
+
+## Verificación y prueba final
+
+1. Comprueba que `java` y `javac` apunten a la misma versión:
+
+   ```sh
+   which java
+   which javac
+   ```
+
+   Ambos deben apuntar a un ejecutable dentro de `/Library/Java/JavaVirtualMachines/` o `/usr/local/opt/openjdk@XX/bin`.
+
+2. Ejecuta un programa Java de prueba. Crea un archivo `HolaMundo.java`:
+
+   ```java
+   public class HolaMundo {
+       public static void main(String[] args) {
+           System.out.println("¡Java funciona correctamente!");
+       }
+   }
+   ```
+
+3. Compila y ejecuta:
+
+   ```sh
+   javac HolaMundo.java
+   java HolaMundo
+   ```
+
+   Deberías ver:
+
+   ```
+   ¡Java funciona correctamente!
+   ```
+
+## Recursos oficiales
+
+- **Oracle JDK Downloads**:
+  [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
+- **Homebrew (instalación y documentación)**:
+  [https://brew.sh](https://brew.sh)
+- **Eclipse Adoptium (Temurin Builds)**:
+  [https://adoptium.net/](https://adoptium.net/)
+- **Documentación oficial de Java (Oracle)**:
+  [https://docs.oracle.com/javase/](https://docs.oracle.com/javase/)
