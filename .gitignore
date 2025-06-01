@@ -1,0 +1,61 @@
+# Sistema operativo y general
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de editor/IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+out/
+
+# IntelliJ (Java/Scala)
+*.iml
+*.ipr
+*.iws
+
+# Scala (sbt)
+target/
+project/target/
+project/project/
+.cache/
+lib_managed/
+src_managed/
+
+# Eclipse
+.eclipse/
+.metadata/
+bin/
+
+# Archivos de log
+*.log
+
+# Hadoop/Spark temporales
+logs/
+tmp/
+*.pid
+
+# Dependencias y artefactos generados
+/vendor/
+/dist/
+/build/
+
+# Config de credenciales
+credentials.properties
+*.secret
+.env
+
+# Archivos SQL Server
+*.bak
+*.mdf
+*.ldf
+
+# Ignorar notebooks temporales
+.ipynb_checkpoints/
